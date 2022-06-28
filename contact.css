@@ -1,0 +1,295 @@
+/* overall */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --lessblue:#00EAFF;
+    --moderateblue:#0C7EAD;
+    --darkblue:#065475;
+    --purple:#A44AA4;
+    --background:rgba(157, 246, 254, 0.879);
+}
+
+body{
+    /* font-family: 'Roboto Flex', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    color: var(--darkblue);
+}
+.body{
+    padding-inline: 10vw;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    height: 100%;
+    width:100%;
+}
+
+
+/*----------------- scrollbar------------------- */
+html::-webkit-scrollbar{
+    width: .8vw;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #ffa9f1;
+    border-radius: 100px; 
+    border: 2px solid #9DF7FF;
+    transition: 0.5s;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: #fd6be5;
+    border-radius: 100px; 
+    border: 1px solid #9DF7FF;
+}
+html::-webkit-scrollbar-track{
+    background: #9DF7FF;
+    border-radius: 100px; 
+}
+
+.logo {
+    height: 4em;
+    width: 4em;
+}
+.tu_logo {
+    height:  4em;
+    width: 4em;
+}
+.navbar {
+    background: var(--background);
+    padding: .5rem;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+  }
+  
+  /* changed this from the tutorial video to
+     allow it to gain focus, making it tabbable */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  .navbarElmt {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  .navbarElmt ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navbarElmt li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  .navbarElmt a {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  .navbarElmt a:hover, .navbarElmt a.active {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: var(--darkblue);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    .navbar {
+        display: flex;
+        padding-inline: 10vw;
+        }
+    
+    .logo {
+      grid-column: 2 / 3;
+    }
+    
+    .navbarElmt {
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbarElmt ul {
+      display: flex;
+    }
+    
+    .navbarElmt li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    .navbarElmt a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    .navbarElmt a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--purple);
+        position: absolute;
+        top: 1.5em;
+        left: 0;
+        border-radius: 20px;
+        right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    .navbarElmt a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+
+  .contacts{
+    padding-top: 8vw;
+    display: flex;
+    justify-content: center;
+  }
+  /*-------------- footer ---------------------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    justify-content: center;
+    align-items: center;
+}
+footer h1{
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.navClass {
+    font-size: 16px;
+    padding: 1vw;
+    font-family: sans-serif;
+}
+
+.navClass:hover {
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.copyrightPage {
+    border-top: 1px solid grey;
+    padding: 2vh;
+    width: 50vw;
+}
+
+.copyrightPage p {
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+    font-family: sans-serif;
+}
+.navfooterLink{
+    display: flex;
+    justify-content: center;
+}
+.social{
+    display: flex;
+    width: 12vw;
+}
+.social a{
+    margin: 10px;
+}
+
+  @media screen and (max-width:800px){
+    .contacts{
+        padding-top: 26vw;
+    }
+    footer{
+        height:65vw;
+    }
+    
+    .social{
+        width: 35vw;
+    }
+  }

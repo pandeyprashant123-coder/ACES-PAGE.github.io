@@ -1,0 +1,823 @@
+/* overall */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --lessblue:#00EAFF;
+    --moderateblue:#0C7EAD;
+    --darkblue:#065475;
+    --purple:#A44AA4;
+    --background:rgba(157, 246, 254, 0.879);
+}
+
+body{
+    /* font-family: 'Roboto Flex', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    color: var(--darkblue);
+}
+.body{
+    padding-inline: 10vw;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    height: 100%;
+    width:100%;
+}
+
+
+/*----------------- scrollbar------------------- */
+html::-webkit-scrollbar{
+    width: .8vw;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #ffa9f1;
+    border-radius: 100px; 
+    border: 2px solid #9DF7FF;
+    transition: 0.5s;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: #fd6be5;
+    border-radius: 100px; 
+    border: 1px solid #9DF7FF;
+}
+html::-webkit-scrollbar-track{
+    background: #9DF7FF;
+    border-radius: 100px; 
+}
+
+/*--------- navbar---------- */
+
+/* .navbar {
+    padding-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+} */
+/* .navbar ul li {
+    padding-left: 3vw;
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.navbar ul li a {
+    padding: 1.2vh;
+    color: var(--textblue);
+;
+} */
+/* .navbar ul li a::before{
+    content: "";
+    position: absolute;
+    background-color: var(--purple);
+    height:5px;
+    width: 0;
+    border-radius: 20px;
+    top: 90px;
+    transition: 0.3s;
+}
+.navbar ul li a:hover::before,.navbar ul li a.active::before{
+    width: 29px;
+}
+.navbar ul li a:hover,.navbar ul li a.active {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: var(--darkblue);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+} */
+.logo {
+    height: 4em;
+    width: 4em;
+}
+.tu_logo {
+    height:  4em;
+    width: 4em;
+}
+
+/*--------------------- ACES top -------------------*/
+
+.imgbody::before{
+	content: "";
+    background: url('Images/home.png') no-repeat center center/cover;
+    position: absolute;
+    height: 700px;
+    width: 100%;
+    z-index: -1;
+}
+.home{
+    margin-bottom: 5vw;
+}
+.acesPagec1 {
+    top: 100px;
+    position: absolute;
+    left: 25vw;
+    margin-block: 2em;
+    margin-inline: auto;
+    width: 50vw;
+    height: 27vw;
+    background: radial-gradient(93.11% 301.29% at 96.97% 93.46%, rgba(250, 251, 255, 0.36) 0%, rgba(153, 245, 254, 0.36) 51.29%, rgba(240, 197, 244, 0.36) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: -1px -1px 5px 0px rgb(0 0 0 / 25%);
+    border-radius: 70px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    z-index: -1;
+}
+.h1 {
+    font-size: 30px;
+}
+.aces {
+    transform: translate(0, 66px);
+    margin-right: 18vw;
+    font-weight: 800;
+    font-size: 3em;
+    text-align: right;
+    line-height: 1.7;
+    z-index: 2;
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+.aces span{
+    font-size: .4em;
+}
+
+
+
+/*----------------- events-------------------- */
+
+
+.upevent{
+    position: absolute;
+background: linear-gradient(0deg, #00EAFF 70%, rgba(19,236,255,0) 100%);
+border-radius:  0% 50% 50% / 50% 0 50% 50%;
+    z-index: -1;
+    width: 100%;
+    margin-top: 10vw;
+    line-height: 5;
+    font-size: 3vw;
+    height: 26vw;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    left: 0;
+    font-weight: 500;
+}
+.eventinfo{
+    line-height: 3;
+    text-align: center;
+}
+
+
+
+/* -------------------eventcard -----------------*/
+
+.Event_card {
+    margin-top: 20vw;
+    display: grid;
+    /* grid-template-columns: repeat(3,1fr); */
+    flex-direction: row;
+    grid-gap: 1rem;
+    justify-content: space-evenly;
+}
+.card1{
+    background: url('Images/web\ design\ compition.jpg')no-repeat center center/cover;
+}
+.card2{
+    background: url('Images/hakathon.jpg')no-repeat center center/cover;
+}
+.card3{
+    background: url('Images/bct\ league.jpg')no-repeat center center/cover;
+}
+.card1,.card2,.card3{
+    padding: 8rem 0 0;
+    max-width: 35ch;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.card{
+    transition: transform 300ms ease;
+}
+.card:hover,
+card:focus-within{
+    transform: scale(1.05);
+}
+
+.cardcontent{
+    padding: 1.5em;
+    background:linear-gradient(
+    hsl(0 0% 0% /0),
+    hsl(20 0% 0%/0.3) 20%,
+    hsl(0 0% 0% /1)
+    );
+} 
+.cardcontent button{
+    background: var(--lessblue);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+@media(hover){
+    .cardcontent{
+        transform: translateY(65%);
+    transition: transform 300ms linear;
+    }
+    .card:focus-within .cardcontent{
+        transition-duration: 0ms;
+    }
+    
+    .cardcontent>*:not(.card-title){
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    .card:hover .cardcontent>*:not(.card-title),
+    .card:focus-within .cardcontent>*:not(.card-title)
+    {
+        opacity: 1;
+        transition-delay:600ms ;
+    }
+    .card:hover .cardcontent,
+.card:focus-within .cardcontent{
+    transform: translateY(0);
+    transition-delay: 300ms;
+}
+}
+.eventBtn{
+    width: 20vw;
+    height: 3vw;
+    border: none;
+    background: linear-gradient(268.34deg, #9DF7FF 12.36%, #EAC9F5 71.62%);
+    box-shadow: 0px 4px 9px rgb(0 0 0 / 25%);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 1s;
+}
+.eventBtn:hover{
+    background:linear-gradient(90deg, #9DF7FF 12.36%, #EAC9F5 71.62%) ;
+}
+.descP{
+    font-size: 1vw;
+}
+
+/*-------------------------- About --------------------*/
+
+
+.About_::before{
+    content: "";
+    background: url("Images/curlbackground.png") no-repeat center center/cover;
+    position: absolute;
+    height: 66vw;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+}
+.About_{
+    display: grid;
+    grid-gap: 1rem;
+    
+        grid-template-areas: 
+        'top top'
+        'descrip pimg';
+    align-items: center;
+}
+.About_ h1{
+    grid-area: top;
+    text-align: center;
+    margin-top: 10vw;
+    grid-area: top;
+    font-size: 3vw;
+}
+.presidentDescription{
+    grid-area: descrip;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.presidentDescription a{
+    width: 15vw;
+    height: 3vw;
+    line-height: 2;
+    border: none;
+    background: linear-gradient(268.34deg, #9DF7FF 12.36%, #EAC9F5 71.62%);
+    box-shadow: 0px 4px 9px rgb(0 0 0 / 25%);
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+.presidentImg{
+    grid-area: pimg;
+}
+.rajishimg{
+    height: 100%;
+    width: 100%;
+
+}
+.ovelback{
+    position: absolute
+}
+
+
+/*------------------ contact---------------------- */
+.contact{
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    padding: 3vw;
+    justify-content: space-evenly;
+    box-shadow: 3px 3px 20px 2px rgb(0 0 0 / 25%);
+    border-radius: 81px;
+    margin: auto;
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+    gap: 3vw;
+}
+.btn button{
+    background: linear-gradient(268.34deg, #9DF7FF 12.36%, #EAC9F5 71.62%);
+box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+border: none;
+padding: 1vw;
+cursor: pointer;
+width: 8vw;
+}
+.contact p{
+    font-size: 1em;
+}
+
+/*-------------------- testimonial------------------------ */
+
+.Testimonials {
+    margin-top: 0vh;
+    height: 35vw;
+}
+.Testimonials::before{
+    content: "";
+    background: url("Images/testimonial.png") no-repeat center center/cover;
+    position: absolute;
+    height: 35vw;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+}
+.quotation{
+    position: absolute;
+    transform: translate(4vw, -1vw);
+}
+.quotation img{
+    width: 6vw;
+}
+.testi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 31vw;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    justify-content: space-between;
+    text-align: justify;
+}
+.testi h1{
+    padding-top: 2vw;
+}
+.testi h1::after{
+    content: "";
+    position: absolute;
+    background-color: var(--purple);
+    height: 0.5vw;
+    width: 5vw;
+    top: 4.5vw;
+    left: 37.5vw;
+    border-radius: 20px;
+}
+.testipeople{
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(3,1fr);
+}
+.Testm_card img{
+    position: absolute;
+    top: 9vw;
+    height: 10vw;
+    width: 10vw;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+.Testm_card{
+    text-align: center;
+    padding: 17px;
+    height: 17vw;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 32px;
+    background: linear-gradient(178.17deg, #F9F9F9 55.26%, #F0C5F4 94.11%);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+.Testm_card:hover{
+    transform: tr;
+}
+.Testm_card h7{
+    font-weight: bold;
+}
+.Testm_card span{
+    font-size: .7rem;
+}
+.Testm_card p{
+    font-size: .8rem;
+    margin-top: 1vw;
+}
+.pravintest{
+
+    background: linear-gradient(308.44deg, #F9F9F9 38.75%, #F0C5F4 95.44%);
+}
+.manojtest{
+    background: linear-gradient(43.64deg, #F9F9F9 37.3%, #F0C5F4 93.45%);
+}
+
+
+/*-------------- footer ---------------------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    justify-content: center;
+    align-items: center;
+}
+footer h1{
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.navClass {
+    font-size: 16px;
+    padding: 1vw;
+    font-family: sans-serif;
+}
+
+.navClass:hover {
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.copyrightPage {
+    border-top: 1px solid grey;
+    padding: 2vh;
+    width: 50vw;
+}
+
+.copyrightPage p {
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+    font-family: sans-serif;
+}
+.navfooterLink{
+    display: flex;
+    justify-content: center;
+}
+.social{
+    display: flex;
+    width: 12vw;
+}
+.social a{
+    margin: 10px;
+}
+
+
+
+/*------------------- media queries -----------------*/
+@media (min-width:50em) {
+    .Event_card {
+        grid-template-columns: repeat(3,1fr);
+    }
+    /* .testipeople{
+        grid-template-columns: repeat(3,1fr);
+    } */
+}
+
+
+
+
+.navbar {
+    
+    background: var(--background);
+    padding: .5rem;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+  }
+  
+  /* changed this from the tutorial video to
+     allow it to gain focus, making it tabbable */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  .navbarElmt {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  .navbarElmt ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navbarElmt li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  .navbarElmt a {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  .navbarElmt a:hover, .navbarElmt a.active {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: var(--darkblue);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    .navbar {
+    display: flex;
+    padding-inline: 10vw;
+    }
+    
+    .logo {
+      grid-column: 2 / 3;
+    }
+    
+    .navbarElmt {
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbarElmt ul {
+      display: flex;
+    }
+    
+    .navbarElmt li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    .navbarElmt a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    .navbarElmt a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--purple);
+        position: absolute;
+        top: 1.5em;
+        left: 0;
+        border-radius: 20px;
+        right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    .navbarElmt a:hover::before,.navbarElmt a:hover.active::before {
+      transform: scale(1,1);
+    }
+  }
+
+
+  @media screen and (max-width:800px){
+    .aces {
+        transform: translate(0, 97px);
+    margin-right: 22vw;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 1.3;
+    }
+    .imgbody::before {
+        height: 440px;
+    }
+    .upevent{
+        margin-top: 21vw;
+        font-size: 3vw;
+    }
+    .Event_card {
+        margin-top: 33vw;
+    }
+    .presidentDescription {
+        font-size: .7rem;
+    }
+    .btn button{
+        width: 13vw;
+    }
+    .Testimonials {
+        height: 55vw;
+    }
+    .Testimonials::before {
+        height: 50vw;
+    }
+    .testi {
+        height: 38vw;
+    }
+    .testi h1::after {
+        top: 6.5vw;
+    }
+    .Testm_card {
+        padding: 10px;
+        height: 24vw;
+        width: 24vw;
+    }
+    .Testm_card p {
+        font-size: .6rem;
+    }
+    .social{
+        width: 35vw;
+    }
+  }
+  @media screen and (max-width:600px){
+.acesPagec1 {
+    left: 15vw;
+    width: 77vw;
+    height: 71vw;
+}
+    .aces {
+        transform: translate(0, 95px);
+        margin-right: 12vw;
+        font-size: 1.62em;
+        line-height: 1.9;
+    }
+    .imgbody::before {
+        height: 560px;
+    }
+    .upevent{
+        margin-top: 65vw;
+    }
+    .Event_card {
+        margin-top: 79vw;
+    }
+    .eventBtn {
+        width: 32vw;
+        height: 7vw;
+    }
+    .presidentDescription {
+        font-size: .5rem;
+    }
+    .About_{
+        grid-gap: 0;
+    }
+    .presidentDescription a {
+        width: 21vw;
+        height: 4vw;
+    }
+    .contact {
+        width: 80vw;
+        padding: 5vw;
+        margin-top: 13vw;
+        margin-bottom: 9vw;
+        flex-direction: column;
+    }    
+    .btn button{
+        width: 25vw;
+    }
+    .quotation img {
+        width: 12vw;
+    }
+   
+.quotation {
+    transform: translate(4vw, -2vw);
+}
+    .Testimonials {
+        height: 206vw;
+    }
+    .Testimonials::before {
+        height: 213vw;
+    }
+    .testipeople{
+        margin-top: 108px;
+        grid-template-columns: 1fr;
+    }
+    .testi {
+        height: 38vw;
+    }
+    .testi h1::after {
+        top: 6.5vw;
+    }
+    .Testm_card {
+        padding: 19px;
+        height: 44vw;
+        width: 55vw;
+    }
+    .Testm_card p {
+        font-size: .6rem;
+    }
+    .Testm_card img {
+        position: static;
+        top: 9vw;
+        height: 87px;
+        width: 19vw;
+    }
+    .testi h1::after {
+        height: 2.5vw;
+        width: 12vw;
+        top: 11.5vw;
+        left: 33.5vw;
+    }    
+    footer{
+        height:65vw;
+    }
+    
+  }

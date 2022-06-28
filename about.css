@@ -1,0 +1,503 @@
+/* overall */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --lessblue:#00eaff92;
+    --moderateblue:#0C7EAD;
+    --darkblue:#065475;
+    --purple:#A44AA4;
+    --background:rgba(157, 246, 254, 0.879);
+}
+
+body{
+    /* font-family: 'Roboto Flex', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    color: var(--darkblue);
+}
+.body{
+    padding-inline: 10vw;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    height: 100%;
+    width:100%;
+}
+
+
+/*----------------- scrollbar------------------- */
+html::-webkit-scrollbar{
+    width: .8vw;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #ffa9f1;
+    border-radius: 100px; 
+    border: 2px solid #9DF7FF;
+    transition: 0.5s;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: #fd6be5;
+    border-radius: 100px; 
+    border: 1px solid #9DF7FF;
+}
+html::-webkit-scrollbar-track{
+    background: #9DF7FF;
+    border-radius: 100px; 
+}
+
+/*--------- navbar---------- */
+
+.navbar {
+    background: var(--background);
+    padding: .5rem;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+  }
+  
+  /* changed this from the tutorial video to
+     allow it to gain focus, making it tabbable */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  .navbarElmt {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  .navbarElmt ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navbarElmt li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  .navbarElmt a {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  .navbarElmt a:hover, .navbarElmt a.active {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: var(--darkblue);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ .navbarElmt a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  .logo {
+    height: 4em;
+    width: 4em;
+}
+.tu_logo {
+    height:  4em;
+    width: 4em;
+}
+
+
+/* ---------------committee member------------------- */
+.comittee{
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateY(77px);
+}
+.comittee h1,p{
+    margin-inline: auto;
+    text-align: justify;
+}
+.topclass,.secondclass{
+    display: flex;
+    justify-content: space-evenly;
+    height: 14vw;
+}
+.person{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.person img{
+    border-radius:100%  ;
+    object-fit: cover;
+    box-shadow:1px 1px 3px 0px;
+}
+
+.person p{
+    font-size: 1vw;
+    font-weight: bold;
+}
+.person span{
+    font-size: 1vw;
+}
+.secondclass .person p{
+    font-size: 1vw;
+    font-weight: bold;
+}
+.thirdclass .person p{
+    font-size: 1vw;
+    font-weight: bold;
+}
+.secondclass .person span{
+    font-size: 1vw;
+}
+.thirdclass .person span{
+    font-size: 1vw;
+}
+.thirdclass .person img{
+    height: 6vw;
+    width: 6vw;
+}
+.topclass .person{
+    border-radius: 100%;
+    height: 11vw;
+    width: 11vw;
+}
+.secondclass .person{
+    border-radius: 100%;
+    height: 11vw;
+    width: 11vw;
+}
+.thirdclass .person{
+    border-radius: 100%;
+}
+.thirdclass{
+    height: 6em;
+    display: flex;
+}
+
+
+/*---------------------- history-------------- */
+.history{
+    display: flex;
+    margin-block: 10vw;
+    height: 500px;
+}
+.history h1{
+    text-align: right;
+    font-size: 3.5vw;
+}
+.history::before{
+    content: "";
+    background: var(--lessblue);
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    right: 0;
+}
+.time{
+    margin-left: 7vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-left: 1px solid;
+    padding-left: 5px;
+    align-items: flex-end;
+}
+.date{
+    width: 30vw;
+}
+.event{
+    margin-left: 15vw;
+}
+.historycontent{
+    display: flex;
+    font-size: 1.2vw;
+}
+
+
+/* -----------------------gallary------------------ */
+.maingalary{
+    margin: 5vw;
+}
+.galary{
+    display: grid;
+    grid-template-areas: 
+    'three'
+    'one'
+    'two'
+    'four'
+    'five'
+    'six'
+    ;
+    grid-gap: 1.5rem;
+}
+.gal:nth-child(1){
+    grid-area: one;
+}
+.gal:nth-child(2){
+    grid-area: two;
+}
+.gal:nth-child(3){
+    grid-area: three;
+}
+.gal:nth-child(4){
+    grid-area: four;
+}
+.gal:nth-child(5){
+    grid-area: five;
+}
+.gal:nth-child(6){
+    grid-area: six;
+}
+.galary img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px;
+}
+
+.galaryContent h1{
+    margin: 0;
+    font-size: 3em;
+    text-align: right;
+    /* font-family: 'Noto Music', sans-serif; */
+}
+.galaryContent p{
+    text-align: right;
+}
+
+/*-------------- footer ---------------------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11vw;
+}
+footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20vw;
+    z-index: -1;
+    left: 0;
+    background: var(--lessblue);
+}
+footer h1{
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+.navClass {
+    font-size: 16px;
+    padding: 1vw;
+    font-family: sans-serif;
+    color: white;
+}
+
+.navClass:hover {
+    transition: 0.3s ease-in-out;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.copyrightPage {
+    border-top: 1px solid grey;
+    padding: 2vh;
+    width: 50vw;
+}
+
+.copyrightPage p {
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+    font-family: sans-serif;
+}
+.navfooterLink{
+    display: flex;
+    justify-content: center;
+}
+.social{
+    display: flex;
+    width: 12vw;
+}
+.social a{
+    margin: 10px;
+}
+
+
+
+/*------------------- media queries -----------------*/
+@media (min-width:50em) {
+    .galary{
+        grid-template-areas: 
+        'one two three three'
+        'four four five six ';
+    }
+}
+
+
+
+
+
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    .navbar {
+        display: flex;
+        padding-inline: 10vw;
+        }
+    
+    .logo {
+      grid-column: 2 / 3;
+    }
+    
+    .navbarElmt {
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbarElmt ul {
+      display: flex;
+    }
+    
+    .navbarElmt li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    .navbarElmt a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    .navbarElmt a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--purple);
+        position: absolute;
+        top: 1.5em;
+        left: 0;
+        border-radius: 20px;
+        right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    .navbarElmt a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+
+
+  @media screen and (max-width:800px){
+    .comittee{
+        height: 84vw;
+        
+    }
+
+    .thirdclass {
+        height: 3em;
+    }
+    .history{
+        margin-block: 25vw;
+    }
+    .historycontent {
+        font-size: 1.8vw;
+    }
+    footer::before {
+        position: absolute;
+        width: 100%;
+        height: 65vw;
+    }
+      
+    footer{
+        height:65vw;
+    }
+    
+    .social{
+        width: 35vw;
+    }
+  }
