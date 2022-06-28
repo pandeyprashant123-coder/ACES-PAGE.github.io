@@ -272,7 +272,7 @@ card:focus-within{
 
 .About_::before{
     content: "";
-    background: url("Images/curlbackground.png") no-repeat center center/cover;
+    background: url("Images/curlBackground.png") no-repeat center center/cover;
     position: absolute;
     height: 66vw;
     width: 100%;
